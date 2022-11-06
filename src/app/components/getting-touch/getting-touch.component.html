@@ -1,0 +1,30 @@
+<section class="get-in-touch" id="contact" style="margin-top:50px;">
+  <div class="container">
+    <div class="theme-title-cvr text-center mb-5">
+      <p class="light-text">CONTACT US</p>
+      <h2>Get in touch</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="forme-formet">
+          <form #contactForm = "ngForm" (ngSubmit) = "onClickSubmit(contactForm.value)" >
+            <input type="text" minlength="4" name="name" placeholder="Full name" required ngModel>
+            <input type="email" minlength="4" name="email" placeholder="Email" required ngModel>
+            <input type="text" [ng2TelInputOptions]="{initialCountry: 'gb'}" (countryChange)="onCountryChange($event)" minlength="4" name="phone" placeholder="Phone" ng2TelInput required ngModel>
+            <textarea name="message" cols="30" rows="10" placeholder="Message" minlength="4" required ngModel></textarea>
+          <button type="submit" class="forme-botton hover-btn"
+                  style="display: block; border: none; width: 100%;">
+            <span class="bttn-tan">SEND MESSEGE</span>
+            &nbsp;<span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

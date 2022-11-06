@@ -1,0 +1,58 @@
+<section class="our-data" id="tokenomics">
+  <div class="container">
+    <div class="token-line">
+      <img src="../../../assets/images/Token-Distribution.png" alt="">
+    </div>
+    <div class="theme-title-cvr text-center mb-5">
+      <p class="light-text">{{ environment.tokenName }}</p>
+      <h2>Tokenomics</h2>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="img-cover">
+          <img src="../../../assets/images/Chart%20(1).png" alt="">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="data-dtl">
+          <h3>Allocation of funds</h3>
+          <p class="light-text">Total token supply - {{ environment.tokenTotalSupply }}</p>
+          <ul>
+            <li>
+              <span style="width: {{ environment.teamPercents }}%;"></span>
+              <span>{{ environment.teamPercents }}% Founders &amp; Team</span>
+            </li>
+            <li>
+              <span style="width: {{ environment.marketingAndPromotionsPercents }}%;"></span>
+              <span>{{ environment.marketingAndPromotionsPercents }}% Marketing &amp; Ecosystem</span>
+            </li>
+            <li>
+              <span style="width: {{ environment.liquidityPoolPercents }}%;"></span>
+              <span>{{ environment.liquidityPoolPercents }}% Liquidity Pool</span>
+            </li>
+            <li>
+              <span style="width: {{ environment.rewardPoolsAndAirdropsPercents }}%;"></span>
+              <span>{{ environment.rewardPoolsAndAirdropsPercents }}% Reward Pools &amp; Airdrops</span>
+            </li>
+            <li>
+              <span style="width: {{ environment.ecosystemDevelopmentPercents }}%;"></span>
+              <span>{{ environment.ecosystemDevelopmentPercents }}% Ecosystem Development</span>
+            </li>
+            <li>
+              <span style="width: {{ environment.icoSalePercents }}%;"></span>
+              <span>{{ environment.icoSalePercents }}% ICO Sale</span>
+            </li>
+            <li>
+              <span style="width: {{ environment.cexListingPercents }}%;"></span>
+              <span>{{ environment.cexListingPercents }}% CEX Listing</span>
+            </li>
+            <li>
+              <span style="width: {{ environment.publicSalePercents }}%;"></span>
+              <span>{{ environment.publicSalePercents }}% Public Sale</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

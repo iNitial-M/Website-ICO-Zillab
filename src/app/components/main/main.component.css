@@ -1,0 +1,78 @@
+::ng-deep .mat-tooltip {
+  font-size: 18px;
+  max-width: unset !important;
+  white-space: pre-wrap;
+}
+
+.swap-card .chip {
+  cursor: pointer;
+}
+
+.swap-card h2:hover {
+  color: #e85559;
+}
+
+.text-black a:hover {
+  text-decoration: underline;
+}
+
+.form-select {
+  max-width: 62px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+.buy-token-input-group {
+  margin: 0 0 1rem 0;
+}
+
+.btn-percent {
+  border-radius: 5px;
+  padding-left: 1rem;
+  background: linear-gradient(to right, #ec7d4f, #e85559);
+  border: none;
+  opacity: 1;
+  color: #fff;
+  cursor: pointer;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 15px;
+  background: linear-gradient(to right, #ec7d4f, #e85559);
+  border: none;
+  color: #fff;
+}
+
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+  padding-left:0;
+  padding-right:0;
+}
+
+
+.hero-img-sec {
+  height:700px
+}
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .hero-img-sec {
+    display: none;
+  }
+}

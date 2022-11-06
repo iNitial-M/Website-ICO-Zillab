@@ -1,0 +1,66 @@
+<section class="footer-section">
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <a href="#">
+            <img src="../../../assets/images/gruuk_logo.png" alt="{{ environment.tokenName}} logo"
+            style="height: 45px"
+            title="Logo">
+            <img src="https://chainstack.com/wp-content/uploads/2021/12/new-binance-chain-logo-11.png"
+              style="height:34px; padding-left: 20px;"
+              alt="" />
+              <img src="https://www.gamat-shop.com/media/wysiwyg/100-percent-secure_large.png"
+              style="height:30px; padding-left: 10px;">
+            <p>&copy; 2022, {{ environment.tokenName }}. All Rights Reserved.</p>
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <h5>Stay connected</h5>
+          <ul>
+            <li>
+              <a href="{{ environment.twitter }}">
+                <fa-icon style="color: white;" [icon]="['fab' ,'twitter']" ></fa-icon>
+                </a>
+              </li>
+            <li>
+              <a href="{{ environment.facebook }}"><fa-icon class="fa-brands" [icon]="['fab' ,'facebook-f']" ></fa-icon></a>
+            </li>
+            <li>
+              <a href="{{ environment.telegram }}"><svg xmlns="http://www.w3.org/2000/svg"
+                               xmlns:xlink="http://www.w3.org/1999/xlink" width="17px" height="14px">
+                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                      d="M0.273,6.711 L4.196,8.094 L5.715,12.707 C5.812,13.002 6.195,13.111 6.449,12.915 L8.636,11.230 C8.865,11.056 9.191,11.047 9.431,11.210 L13.376,13.915 C13.647,14.101 14.032,13.961 14.100,13.652 L16.990,0.525 C17.064,0.186 16.712,-0.097 16.371,0.028 L0.268,5.894 C-0.129,6.039 -0.126,6.571 0.273,6.711 ZM5.470,7.358 L13.138,2.897 C13.276,2.818 13.418,2.994 13.300,3.097 L6.971,8.652 C6.749,8.850 6.605,9.110 6.565,9.394 L6.349,10.903 C6.321,11.104 6.021,11.124 5.962,10.930 L5.133,8.179 C5.038,7.865 5.176,7.530 5.470,7.358 Z" />
+              </svg></a>
+            </li>
+            <li>
+              <a href="#">
+                <fa-icon class="fa-brands" [icon]="['fab' ,'btc']" ></fa-icon>
+              </a>
+            </li>
+            <li>
+              <a href="{{ environment.youtube }}">
+                <fa-icon class="fa-brands" [icon]="['fab' ,'youtube']" ></fa-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <h5>I want to receive latest news about {{ environment.tokenName }} project.</h5>
+          <div class="foot-com">
+            <form #contactForm = "ngForm" (ngSubmit) = "onClickSubmit(contactForm.value)" >
+              <input type="email" name="email" placeholder="Email" ngModel>
+              <button class="hover-btn" type="submit">Subscribe
+                <span
+                  *ngIf="loading"
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span> </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+  </footer>
+</section>

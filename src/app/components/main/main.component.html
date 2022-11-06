@@ -1,0 +1,164 @@
+<section class="banner mg-25" id="{{ environment.tokenName }}">
+  <div class="banner-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="crypto-discount-cover">
+            <div class="c1">
+              <h2>
+                <b>{{ environment.tokenName}} </b
+                >
+                {{ environment.headerText }}
+              </h2>
+            </div>
+            <div class="c2">
+
+            </div>
+            <div class="offer-buttons">
+              <button class="btn btn1 hover-btn" type="submit">
+                <fa-icon [icon]="faFilePdf"></fa-icon>
+                White Paper
+              </button>
+              <button class="btn btn1 hover-btn" type="submit">Join ${{ environment.tokenSymbol }}
+                <fa-icon [icon]="faTelegram"></fa-icon> Telegram
+              </button>
+            </div>
+
+            <div class="d-flex flex-column col-md-10 mb-5">
+              <h2 style="font-size: 24px; font-weight: bold">Countdown Presale ends</h2>
+              <lib-angular-countdown-dateTime
+                [endDateBind]="'2022.12.31'"
+                [dayText]="'days'"
+                [hourText]="'hour'" [minutesText]="'minute'"
+                [secondsText]="'second'">
+              </lib-angular-countdown-dateTime>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 swap-card">
+          <div class="container mb-2">
+            <div class="row" *ngIf="account && lockedTokenAmount">
+              <div class="col-sm-12">
+                <div class="chip mb-2 text-center">
+                  <fa-icon [icon]="faLock"></fa-icon> Locked Tokens: {{ lockedTokenAmount }} {{ environment.tokenSymbol }}
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div
+                  class="chip text-center"
+                  matTooltip="{{ account }}"
+                  *ngIf="account"
+                  ngxClipboard
+                  [cbContent]="account"
+                  (click)="
+                    snackbar.openWithIcon(
+                      'Address copied into clipboard',
+                      'fas',
+                      'triangle-exclamation',
+                      'white'
+                    )
+                  "
+                >
+                  <fa-icon [icon]="faWallet"></fa-icon> Wallet: {{ account }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tokens-cover">
+            <div class="text-center token-title">
+              <h2>Buy ${{ environment.tokenSymbol }} Tokens</h2>
+            </div>
+            <div class="token-form">
+              <form
+                [formGroup]="tokenBuyForm"
+                (ngSubmit)="connectWalletOrBuy()"
+                (keydown.enter)="$event.preventDefault()"
+              >
+                <div class="buy-token-input-group">
+                  <div class="input-group">
+                    <select
+                      style=" width: 15%; -webkit-appearance: auto; appearance: auto; background-size: auto; background-position: right 25px center; "
+                      [style.background-image]=" getSelectedTokenImage(fromSelect.value) "
+                      class="form-select one"
+                      aria-label="Default select example"
+                      formControlName="fromTokenSelect"
+                      (change)="changeSelectFromToken(fromSelect.value)"
+                      #fromSelect >
+                      <option>BNB</option>
+                    </select>
+                    <input
+                      type="text"
+                      class="form-control"
+                      maxlength="12"
+                      aria-label="Text input with dropdown button"
+                      formControlName="fromTokenInput"
+                      placeholder="1 BNB"
+                      (keypress)="keyPressNumbersWithDecimal($event)"
+                      (input)="fromInputChange(fromInput.value)"
+                      #fromInput
+                    />
+                    <button
+                      class="btn btn-outline-secondary btn-percent"
+                      [disabled]="!metamaskConnected || loading"
+                      (click)="calculateFiftyPercent($event)"
+                    >
+                      50%
+                    </button>
+                    <button
+                      class="btn btn-outline-secondary btn-percent"
+                      [disabled]="!metamaskConnected || loading"
+                      (click)="calculateMax($event)"
+                    >
+                      Max
+                    </button>
+                  </div>
+                </div>
+
+                <div class="buy-token-input-group">
+                  <div class="input-group">
+                    <select
+                      class="form-select two"
+                      aria-label="Default select example"
+                      formControlName="toTokenSelect"
+                    >
+                      <option selected></option>
+                    </select>
+                    <input
+                      type="text"
+                      maxlength="12"
+                      class="form-control"
+                      aria-label="Text input with dropdown button"
+                      formControlName="toTokenInput"
+                      placeholder="3469.9 ZILAB"
+                      (keypress)="keyPressNumbersWithDecimal($event)"
+                      (input)="toInputChange(toInput.value)"
+                      #toInput
+                    />
+                  </div>
+                </div>
+
+                <div class="text-center connect-wallet">
+                  <p class="text-black" style="font-size:13px" *ngIf="metamaskConnected">By clicking the “Buy now” button you agree to comply with all of the terms and conditions.</p>
+
+                  <button
+                    [disabled]="loading"
+                    class="wallet hover-btn"
+                    type="submit"
+                  >
+                    <span
+                      *ngIf="loading"
+                      class="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                    {{ loading ? "Processing" : connectOrBuyText() }}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

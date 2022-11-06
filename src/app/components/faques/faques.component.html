@@ -1,0 +1,33 @@
+<section class="faqs" id="faques">
+  <div class="container">
+    <div class="theme-title-cvr text-center mb-5">
+      <p class="light-text">faqs</p>
+      <h2>Frequency Asked Questions</h2>
+    </div>
+    <div class="col-lg-6 mx-auto">
+      <ul>
+        <li *ngFor="let item of faqs; let i = index">
+          <h3 class="faq-title" [class.active]="i === 0" >{{ item.question}}</h3>
+          <div class="faq-cont">
+            <p class="light-text">{{ item.answer }}</p>
+          </div>
+        </li>
+
+        <li>
+          <h3 class="faq-title">Does the crowdsale comply with legal regulations?</h3>
+          <div class="faq-cont">
+            <p class="light-text">JavaScript is also used in environments that aren’t web-based, such as
+              PDF documents, site-specific browsers, and desktop widgets. Newer and faster JavaScript
+              virtual machines (VMs) and platforms built upon them have also increased the popularity
+              of JavaScript for server-side web applications. On the client side, JavaScript has been
+              traditionally implemented as an interpreted language, but more recent browsers perform
+              just-in-time compilation.</p>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</section>
+

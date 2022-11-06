@@ -1,0 +1,66 @@
+<section class="sec6" id="tokens">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="../../../assets/images/Cryptoland.png" alt="img">
+      </div>
+      <div class="col-lg-6">
+        <div class="theme-title-cvr">
+          <p class="light-text">About ${{ environment.tokenSymbol }} token.</p>
+          <h2>Token Information</h2>
+        </div>
+        <div class="sec6-list">
+          <ul>
+            <li>
+              <P>Token Name</P>
+              <p class="light-text">{{ environment.tokenName }}</p>
+            </li>
+            <li>
+              <P>Token Symbol</P>
+              <p class="light-text">{{ environment.tokenSymbol }}</p>
+            </li>
+            <li>
+              <p>{{ environment.tokenSymbol }} Token Image</p>
+              <p class="light-text">...</p>
+            </li>
+            <li>
+              <P>Starting Price Pre-ICO</P>
+              <p class="light-text">1 ${{ environment.tokenSymbol }} for {{ environment.preIcoStartingPrice }}</p>
+            </li>
+            <li>
+              <P>Starting Price ICO</P>
+              <p class="light-text">1 ${{ environment.tokenSymbol }} for {{ environment.icoStartingPrice }}</p>
+            </li>
+            <li>
+              <p>Total Supply</p>
+              <p class="light-text">{{ environment.tokenTotalSupply }}</p>
+            </li>
+            <li>
+              <P>Lock Period</P>
+              <p class="light-text">{{ environment.lockPeriod }}</p>
+            </li>
+            <li>
+              <P>Possible Buying Tokens</P>
+              <p class="light-text">{{ environment.possibleBuyingTokens }}</p>
+            </li>
+            <li>
+              <P>Minimum Purchase</P>
+              <p class="light-text">{{ environment.minimumPurchase }} ${{ environment.tokenSymbol }}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="sec7-list">
+          <h2>General Description</h2>
+          <p class="light-text">{{ environment.tokenName }} will be released on the basis of BEP-20 platform and fully
+            comply with BEP20* standard. </p>
+          <p class="light-text">Support of this standard guarantees the compatibility of the token with
+            third-party services (wallets, exchanges, listings, etc.), and provides easy integration.
+          </p>
+        </div>
+        <div class="thimas-bet">
+          <a href="#{{ environment.tokenName }}" class="bttn-tan hover-btn" type="button">Buy ${{ environment.tokenSymbol }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
